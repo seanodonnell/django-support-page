@@ -1,8 +1,8 @@
-<html>
-    <head>
-        <title>Django Support Page Example App</title>
-    </head>
-    <body>
-        <h1>Django Support Page Example App</h1>
-    </body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+Django Support Page Example App
+{% endblock %}
+{% block content %}
+<h1>Django Support Page Example App</h1>
+<a href="{% url support_index %}">Support</a>
+{% endblock %}
