@@ -1,6 +1,6 @@
 # Django settings for example project.
 # generate absolute paths
-
+import os
 DIRNAME = os.path.dirname(__file__)
 
 DEBUG = True
