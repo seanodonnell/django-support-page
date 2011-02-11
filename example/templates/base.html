@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>{% block title %}Example Site{% endblock %}</title>
+        {% block extra_head %}{% endblock %}
+    </head>
+    {% block body %}
+    <body>
+        <!-- using template conventions from http://ericholscher.com/projects/django-conventions/app/ -->
+        {% block content %}
+        {% endblock %}
+    </body>
+    {% endblock %}
+</html>
