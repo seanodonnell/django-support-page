@@ -1,1 +1,1 @@
-remember to document staticfiles
+A resusable django app to provide a support request page that automatically detects and reports information about the end users browser.
