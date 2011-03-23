@@ -9,6 +9,12 @@ class SupportForm(forms.Form):
     subject = forms.CharField(max_length=100)
     body = forms.CharField(widget=forms.TextInput())
 
+    class Media:
+        js = (
+                'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js',
+                'django-support-page/js/jquery.browser.min.js'
+                ,'django-support-page/js/detect.js',)
+
     def save(self, data=None, name=None, files=None, request=None,
                 fail_silently=False):
 
