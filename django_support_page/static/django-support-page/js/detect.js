@@ -1,4 +1,4 @@
-
+$(document).ready(function(){
 
 detected = {}
 
@@ -64,6 +64,12 @@ function detect_window_height()
     return "unknown";
 }
 
+detected["appversion"] =  detect_appversion();
+$('#id_js_info').val(JSON.stringify(detected));
+}
+
+);
+/*
 user agent
 http_accept headers
 browser plugins
@@ -72,3 +78,4 @@ screen size and color depth
 fonts
 cookies enabled
 see browserspy.dk
+*/

@@ -38,6 +38,11 @@ def mail_handler(subject, body, from_name, from_email, data, files,
             """Please add DJANGO_SUPPORT_EMAIL_TO to your settings.py,
                  It should contain a list of email addresses to send support
                  email to.""")
+    body += "*******************************\r\n"
+    body += "  BROWSER DATA  "
+    body += "*******************************\r\n"
+    for k,v in data.items():
+        body += "%s  : %s\r\n" %(k, v)
     #TEST
     send_mail(subject, body, from_email, send_to, fail_silently=fail_silently)
 
