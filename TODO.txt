@@ -1,4 +1,16 @@
 use a template for the email
+test setup.py thouroughly
 remember to document staticfiles
+plugin for trac
 tests
 docs
+minify javascript
+internationalization
+additional detection:
+    http_accept headers
+    browser plugins
+    time zone
+    screen size and color depth
+    fonts
+    cookies enabled
+    see browserspy.dk

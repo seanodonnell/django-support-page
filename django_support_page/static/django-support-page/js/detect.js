@@ -147,12 +147,4 @@ $('#id_js_info').val(JSON.stringify(detected));
 }
 
 );
-/*
-http_accept headers
-browser plugins
-time zone
-screen size and color depth
-fonts
-cookies enabled
-see browserspy.dk
-*/
+
