@@ -1,0 +1,4 @@
+use a template for the email
+remember to document staticfiles
+tests
+docs
