@@ -7,7 +7,7 @@ from forms import SupportForm
 
 
 def support_page(request, form_class=SupportForm,
-                 template_name='django_support_form/support_form.html',
+                 template_name='django_support_page/support_form.html',
                  success_url=None, extra_context=None, fail_silently=False):
     if success_url is None:
         success_url = reverse('support_sent')
@@ -30,7 +30,7 @@ def support_page(request, form_class=SupportForm,
                               context_instance=RequestContext(request))
 
 def support_form_sent(request,
-                        template_name='django_support_form/form_sent.html',
+                        template_name='django_support_page/form_sent.html',
                         extra_context=None):
     if extra_context is None:
         extra_context = {}
