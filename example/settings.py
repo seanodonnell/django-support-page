@@ -13,7 +13,7 @@ ADMINS = (
 DJANGO_SUPPORT_EMAIL_TO = ["nobody@test.com"]
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
-
+STATIC_URL = 'http://localhost:8000/static/'
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -98,6 +98,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     'django_support_page',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
