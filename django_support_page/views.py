@@ -18,7 +18,7 @@ def support_page(request, form_class=SupportForm,
             form.save(fail_silently=fail_silently, request=request)
             return HttpResponseRedirect(success_url)
     else:
-        form = form_class(request=request)
+        form = form_class()
     data = dict(form=form)
     if extra_context is None:
         extra_context = {}
