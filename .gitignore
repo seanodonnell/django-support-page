@@ -1,4 +1,5 @@
 *.pyc
 *.swp
+*.swo
 dist
 django_support_page.egg-info

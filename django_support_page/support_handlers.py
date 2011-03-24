@@ -5,7 +5,7 @@ from django.utils.importlib import import_module
 
 def init_support_handlers():
     handler_paths = getattr(settings, "SUPPORT_PAGE_HANDLERS",
-                                ["django_support_page.handlers.mail_handler"])
+                   ["django_support_page.handlers.mail_handler.mail_handler"])
     handlers = []
 
     for handler_path in handler_paths:
@@ -28,22 +28,3 @@ def init_support_handlers():
 
         handlers.append(h_func)
     return handlers
-
-def mail_handler(subject, body, from_name, from_email, data, files,
-                    fail_silently, request):
-    send_to = getattr(settings, "DJANGO_SUPPORT_EMAIL_TO", None)
-    #TEST
-    if not send_to:
-        raise Exception(
-            """Please add DJANGO_SUPPORT_EMAIL_TO to your settings.py,
-                 It should contain a list of email addresses to send support
-                 email to.""")
-    body += "\r\n\r\n*******************************\r\n"
-    body += "  BROWSER DATA  \r\n"
-    body += "*******************************\r\n"
-    for k in sorted(data.keys()):
-        body += "%s  : %s\r\n" %(k, data[k])
-    #TEST
-    send_mail(subject, body, from_email, send_to, fail_silently=fail_silently)
-
-

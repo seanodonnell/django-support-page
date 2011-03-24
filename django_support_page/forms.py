@@ -1,5 +1,5 @@
 from django import forms
-from handlers import init_support_handlers
+from support_handlers import init_support_handlers
 from django.utils import simplejson
 
 support_handlers = init_support_handlers()

@@ -4,6 +4,7 @@ remember to document staticfiles
 plugin for trac
 tests
 docs
+pick a licence
 minify javascript
 internationalization
 additional detection:
