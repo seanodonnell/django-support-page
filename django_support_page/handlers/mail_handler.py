@@ -1,5 +1,7 @@
 from django.conf import settings
-from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.template import Context
 
 def mail_handler(subject, body, from_name, from_email, data, files,
                     fail_silently, request):
@@ -10,12 +12,13 @@ def mail_handler(subject, body, from_name, from_email, data, files,
             """Please add DJANGO_SUPPORT_EMAIL_TO to your settings.py,
                  It should contain a list of email addresses to send support
                  email to.""")
-    body += "\r\n\r\n*******************************\r\n"
-    body += "  BROWSER DATA  \r\n"
-    body += "*******************************\r\n"
-    for k in sorted(data.keys()):
-        body += "%s  : %s\r\n" %(k, data[k])
-    #TEST
-    send_mail(subject, body, from_email, send_to, fail_silently=fail_silently)
-
-
+    textemail = get_template("django_support_page/emails/email.txt")
+    htmlemail = get_template("django_support_page/emails/email_html.txt")
+    data = [(k, data[k]) for k in sorted(data.keys())]
+    context = Context(dict(data=data, body=body, from_name=from_name,
+                           from_email=from_email))
+    text_content = textemail.render(context)
+    html_content = htmlemail.render(context)
+    msg = EmailMultiAlternatives(subject, text_content, from_email, send_to)
+    msg.attach_alternative(html_content, "text/html")
+    msg.send()

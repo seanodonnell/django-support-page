@@ -1,4 +1,3 @@
-use a template for the email
 test setup.py thouroughly
 remember to document staticfiles
 plugin for trac

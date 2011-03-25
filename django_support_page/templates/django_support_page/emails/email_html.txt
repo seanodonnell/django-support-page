@@ -1,0 +1,15 @@
+<p>
+From: {{ from_name }} - <a href="mailto:{{ from_email }}">{{ from_email }}</a>
+</p>
+<p>
+{{ body }}
+</p>
+<h2>BROWSER DATA</h2>
+<table>
+{% for k, v in data %}
+<tr>
+<td>{{ k }}</td><td>{{ v }}</td>
+</tr>
+{% endfor %}
+</table>
+ 

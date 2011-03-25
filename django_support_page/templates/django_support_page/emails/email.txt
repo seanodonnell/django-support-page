@@ -1,0 +1,13 @@
+From: {{ from_name }} - {{ from_email }}
+
+{{ body }}
+
+*******************************
+         BROWSER DATA  
+*******************************
+
+{% for k, v in data %}
+{{ k }} : {{ v }}
+{% endfor %}
+    for k in sorted(data.keys()):
+ 
