@@ -1,3 +1,4 @@
+a way to change the mail handler template path...
 test setup.py thouroughly
 remember to document staticfiles
 plugin for trac
