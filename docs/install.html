@@ -3,32 +3,34 @@
         <title>
             Installing django-support-page
         </title>
+        <link rel="stylesheet" type="text/css" href="docs.css"></link>
         <link rel="stylesheet" type="text/css" href="pygments.css"></link>
     </head>
     <body>
+    <div id="wrapper">
 
 <h1>Installing django-support-page</h1>
 
 
-<p>download the source distribution and extract it</p>
-<p class="terminal">
+<p>Download the source distribution and extract it.</p>
+<pre class="terminal">
 wget http://somewhere/django-support-page-0.1.tar.gz
 tar xzvf django-support-page-0.1.tar.gz
-</p>
+</pre>
 <p>
-Go into the resulting directory and install it
+Go into the resulting directory and install it.
 </p>
-<p class="terminal">
+<pre class="terminal">
 cd django-support-page-0.1.tar.gz
 sudo python setup.py install
-</p>
+</pre>
 
 <p>
-add the following to settings.py
+Add the following to your project's settings.py
 </p>
 <p>
-1. The email address to send support requests to (not required if you
-   intend to disable to default mail handler, removing it covered in configure.    txt)
+The email address to send support requests to (not required if you
+   intend to disable to default mail handler, removing it covered in the <a href="configure.html">Configuration Documentation</a>).
 </p>
 <p class="python">
 <div class="highlight"><pre>DJANGO_SUPPORT_EMAIL_TO = [&quot;nobody@test.com&quot;]
@@ -36,7 +38,7 @@ add the following to settings.py
 
 <p>
 <p>
-the example project contains a shell script called dummymail.sh, which starts
+The example project contains a shell script called dummymail.sh, which starts
 a fake mail server on port 1025 and prints any emails recieved out. If you
 would like to use it when testing with your own project, add the following settings.
 </p>
@@ -47,24 +49,24 @@ EMAIL_PORT = 1025
 
 </p>
 <p>
-To run the dummy mail server
+To run the dummy mail server:
 </p>
-<p class="terminal">
+<pre class="terminal">
 ./example/dummymail.sh
-</p>
+</pre>
 <p>
 You will see the contents of any mail sent printed in the terminal where you
-start the script
+start the script.
 </p>
 <p>django-support page supports django static media support, to use it add 
-   a STATIC_URL to your settings file</p>
+   a STATIC_URL to your settings file.</p>
 <p class="python">
 <div class="highlight"><pre>STATIC_URL = &#39;http://localhost:8000/static/&#39;
 </pre></div>
 
 </p>
 <p>
-add django_support_page to your INSTALLED_APPS SETTING
+Add django_support_page to your INSTALLED_APPS SETTING.
 </p>
 <p class="python">
 <div class="highlight"><pre>INSTALLED_APPS = (
@@ -84,7 +86,7 @@ add django_support_page to your INSTALLED_APPS SETTING
 
 </p>
 <p>
-include django_support_pages urls in your urls.py
+Include django_support_pages urls in your urls.py.
 </p>
 <p class="python">
 <div class="highlight"><pre>from django.conf.urls.defaults import *
@@ -96,14 +98,15 @@ urlpatterns = patterns(&#39;&#39;,
 
 </p>
 <p>
-finally start the django application
+Finally start the Django application.
 </p>
-<p class="terminal">
+<pre class="terminal">
 cd example
 python manage.py runserver
-</p>
+</pre>
 <p>
-Visit <a href="http://localhost:8000/support/">http://localhost:8000/support/</a> to see the default form and send a test message
+Visit <a href="http://localhost:8000/support/">http://localhost:8000/support/</a> to see the default form and send a test message.
 </p>
+</div>
 </body>
 </html>
