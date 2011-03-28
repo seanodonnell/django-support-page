@@ -1,0 +1,72 @@
+body
+{
+    color: #272727;
+    text-align: justify;
+}
+
+#wrapper
+{
+    width: 36em;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+p
+{
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+pre.terminal
+{
+    background:#000000;
+    color: #ffffff;
+    text-align: left;
+    line-height: 1.5em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    font-size: 1em;
+}
+
+pre.terminal a
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+p.subtitle
+{
+
+    font-size: 10pt;
+    color: #515353;
+    font-family: Georgia,'Bitstream Vera Sans Serif','Lucida Grande',Helvetica,Verdana,Arial,sans-serif
+    font-style: normal;
+    margin-top: 0px;
+}
+
+a, p, li, span, div, th, td
+{
+    font-family:Verdana,Helvetica,'Bitstream Vera Sans',Arial,sans-serif;
+    font-size: 1em;
+}
+
+.clear
+{
+    clear:both;
+}
+
+a
+{
+    color: #036061;
+}
+
+
+p.footer
+{
+    color: #515353;
+    font-size: 10pt;
+    display: block;
+    clear: both;
+}
+
