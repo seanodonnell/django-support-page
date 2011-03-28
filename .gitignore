@@ -2,4 +2,8 @@
 *.swp
 *.swo
 dist
+artifacts
+logs
+output
+output-long
 django_support_page.egg-info

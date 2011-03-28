@@ -1,0 +1,15 @@
+{
+    "install.html|fn|jinja":
+    {
+        "allinputs":true
+    },
+    "install.txt|fn|jinja":
+    {
+        "allinputs":true
+    },
+    "*.css|cp": {},
+    "*.py|pyg": {},
+    "*.py|idio": {},
+    "*.py|idio|t": {},
+    "*.py|ct|t": {}
+}

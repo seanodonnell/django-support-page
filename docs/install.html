@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>
+            Installing django-support-page
+        </title>
+        <link rel="stylesheet" type="text/css" href="pygments.css"></link>
+    </head>
+    <body>
+
+<h1>Installing django-support-page</h1>
+
+
+<p>download the source distribution and extract it</p>
+<p class="terminal">
+wget http://somewhere/django-support-page-0.1.tar.gz
+tar xzvf django-support-page-0.1.tar.gz
+</p>
+<p>
+Go into the resulting directory and install it
+</p>
+<p class="terminal">
+cd django-support-page-0.1.tar.gz
+sudo python setup.py install
+</p>
+
+<p>
+add the following to settings.py
+</p>
+<p>
+1. The email address to send support requests to (not required if you
+   intend to disable to default mail handler, removing it covered in configure.    txt)
+</p>
+<p class="python">
+<div class="highlight"><pre>DJANGO_SUPPORT_EMAIL_TO = [&quot;nobody@test.com&quot;]
+</pre></div>
+
+<p>
+<p>
+the example project contains a shell script called dummymail.sh, which starts
+a fake mail server on port 1025 and prints any emails recieved out. If you
+would like to use it when testing with your own project, add the following settings.
+</p>
+<p class="python">
+<div class="highlight"><pre>EMAIL_HOST = &#39;localhost&#39;
+EMAIL_PORT = 1025
+</pre></div>
+
+</p>
+<p>
+To run the dummy mail server
+</p>
+<p class="terminal">
+./example/dummymail.sh
+</p>
+<p>
+You will see the contents of any mail sent printed in the terminal where you
+start the script
+</p>
+<p>django-support page supports django static media support, to use it add 
+   a STATIC_URL to your settings file</p>
+<p class="python">
+<div class="highlight"><pre>STATIC_URL = &#39;http://localhost:8000/static/&#39;
+</pre></div>
+
+</p>
+<p>
+add django_support_page to your INSTALLED_APPS SETTING
+</p>
+<p class="python">
+<div class="highlight"><pre>INSTALLED_APPS = (
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.sites&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;django_support_page&#39;,
+    # Uncomment the next line to enable the admin:
+    # &#39;django.contrib.admin&#39;,
+    # Uncomment the next line to enable admin documentation:
+    # &#39;django.contrib.admindocs&#39;,
+)
+</pre></div>
+
+</p>
+<p>
+include django_support_pages urls in your urls.py
+</p>
+<p class="python">
+<div class="highlight"><pre>from django.conf.urls.defaults import *
+
+urlpatterns = patterns(&#39;&#39;,
+    (r&#39;^support/&#39;, include(&quot;django_support_page.urls&quot;)),
+)
+</pre></div>
+
+</p>
+<p>
+finally start the django application
+</p>
+<p class="terminal">
+cd example
+python manage.py runserver
+</p>
+<p>
+Visit <a href="http://localhost:8000/support/">http://localhost:8000/support/</a> to see the default form and send a test message
+</p>
+</body>
+</html>

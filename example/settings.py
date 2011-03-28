@@ -9,11 +9,14 @@ TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
-
+### @export "support_email_to"
 DJANGO_SUPPORT_EMAIL_TO = ["nobody@test.com"]
+### @export "mail_host"
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
+### @export "static_url"
 STATIC_URL = 'http://localhost:8000/static/'
+### @end
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -92,6 +95,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+### @export "installed_apps"
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',

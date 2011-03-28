@@ -1,0 +1,73 @@
+download the source distribution and extract it
+
+wget http://somewhere/django-support-page-0.1.tar.gz
+tar xzvf django-support-page-0.1.tar.gz
+
+Go into the resulting directory and install it
+
+cd django-support-page-0.1.tar.gz
+sudo python setup.py install
+
+add the following to settings.py
+
+1. The email address to send support requests to (not required if you
+   intend to disable to default mail handler, removing it covered in configure.    txt)
+
+DJANGO_SUPPORT_EMAIL_TO = ["nobody@test.com"]
+
+
+the example project contains a shell script called dummymail.sh, which starts
+a fake mail server on port 1025 and prints any emails recieved out. If you
+would like to use it when testing with your own project, add the following settings.
+
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+
+
+To run the dummy mail server
+
+./example/dummymail.sh
+
+You will see the contents of any mail sent printed in the terminal where you
+start the script
+
+2. django-support page supports django static media support, to use it add 
+   a STATIC_URL to your settings file
+
+STATIC_URL = 'http://localhost:8000/static/'
+
+
+3. add django_support_page to your INSTALLED_APPS SETTING
+
+INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_support_page',
+    # Uncomment the next line to enable the admin:
+    # 'django.contrib.admin',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
+)
+
+
+include django_support_pages urls in your urls.py
+
+from django.conf.urls.defaults import *
+
+urlpatterns = patterns('',
+    (r'^support/', include("django_support_page.urls")),
+)
+
+
+4. finally start the django application
+
+cd example
+python manage.py runserver
+
+Visit http://localhost:8000/support/
+
+to see the default form and send a test message
