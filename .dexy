@@ -1,5 +1,5 @@
 {
-    "install.html|fn|jinja":
+    "install.html|fn|jinja|hd|ft":
     {
         "allinputs":true
     },
@@ -9,6 +9,7 @@
     },
     "*.css|cp": {},
     "*.py|pyg": {},
+    "_*.html|jinja": {},
     "*.py|idio": {},
     "*.py|idio|t": {},
     "*.py|ct|t": {}
