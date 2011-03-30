@@ -9,7 +9,7 @@ class SupportForm(forms.Form):
     email = forms.EmailField(max_length=100)
     subject = forms.CharField(max_length=100)
     body = forms.CharField(widget=forms.Textarea())
-    js_info = forms.CharField(widget=forms.HiddenInput())
+    js_info = forms.CharField(widget=forms.HiddenInput(), required=False)
 
     class Media:
         js = (
