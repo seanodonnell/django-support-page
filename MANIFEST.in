@@ -1,3 +1,5 @@
 recursive-include django_support_page/handlers *.py
+recursive-include django_support_page/templates/emails *.html
+recursive-include django_support_page/templates/emails *.txt
 recursive-include django_support_page/templates *.html
 recursive-include django_support_page/static *.js
