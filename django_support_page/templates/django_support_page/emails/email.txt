@@ -9,5 +9,4 @@ From: {{ from_name }} - {{ from_email }}
 {% for k, v in data %}
 {{ k }} : {{ v }}
 {% endfor %}
-    for k in sorted(data.keys()):
  
