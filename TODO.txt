@@ -3,6 +3,7 @@ remember to document staticfiles
 plugin for trac
 tests
 docs
+make js pluggable
 test setup.py thouroughly
 pick a licence
 minify javascript
