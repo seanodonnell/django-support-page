@@ -16,7 +16,7 @@ intend to disable to default mail handler, removing it is covered in configure. 
 {{ d['sections']['example/settings.py|idio|t']['support_email_to'] }}
 
 The example project contains a shell script called dummymail.sh, which starts
-a fake mail server on port 1025 and prints any emails recieved out. If you
+a fake mail server on port 1025 and prints any emails received out. If you
 would like to use it when testing with your own project, add the following settings.
 
 {{ d['sections']['example/settings.py|idio|t']['mail_host'] }}
