@@ -15,11 +15,11 @@ sudo python setup.py install
 </pre>
 
 <p>
-Add the following to your project's settings.py
+Add the following to your project's settings.py.
 </p>
 <p>
 The email address to send support requests to (not required if you
-   intend to disable to default mail handler, removing it covered in the <a href="configure.html">Configuration Documentation</a>).
+   intend to disable to default mail handler, removing it is covered in the <a href="configure.html">Configuration Documentation</a>).
 </p>
 <p class="python">
 {{ d['sections']['example/settings.py|idio']['support_email_to'] }}
@@ -42,13 +42,18 @@ To run the dummy mail server:
 You will see the contents of any mail sent printed in the terminal where you
 start the script.
 </p>
-<p>django-support page supports django static media support, to use it add 
-   a STATIC_URL to your settings file.</p>
+<p>django-support page supports Django static media support, to use it add 
+   a STATIC_URL to your settings.py.</p>
 <p class="python">
 {{ d['sections']['example/settings.py|idio']['static_url'] }}
 </p>
 <p>
-Add django_support_page to your INSTALLED_APPS SETTING.
+If you do not intend to use Django's static media support, copy the templates in django_support_page to your own templates directory, and the contents of the static directory to the location you serve your static media from. django-support-page's default templates assume that you have a base template, and that it follows certain conventions, see the <a href="templates.html">Templates Documentation</a> for details.
+</p>
+
+
+<p>
+Add django_support_page to your INSTALLED_APPS setting.
 </p>
 <p class="python">
 {{ d['sections']['example/settings.py|idio']['installed_apps'] }}

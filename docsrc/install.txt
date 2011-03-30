@@ -1,4 +1,4 @@
-download the source distribution and extract it
+Download the source distribution and extract it.
 
 wget http://somewhere/django-support-page-0.1.tar.gz
 tar xzvf django-support-page-0.1.tar.gz
@@ -8,44 +8,44 @@ Go into the resulting directory and install it
 cd django-support-page-0.1.tar.gz
 sudo python setup.py install
 
-add the following to settings.py
+Add the following to settings.py:
 
-1. The email address to send support requests to (not required if you
-   intend to disable to default mail handler, removing it covered in configure.    txt)
+The email address to send support requests to (not required if you
+intend to disable to default mail handler, removing it is covered in configure.    txt).
 
 {{ d['sections']['example/settings.py|idio|t']['support_email_to'] }}
 
-the example project contains a shell script called dummymail.sh, which starts
+The example project contains a shell script called dummymail.sh, which starts
 a fake mail server on port 1025 and prints any emails recieved out. If you
 would like to use it when testing with your own project, add the following settings.
 
 {{ d['sections']['example/settings.py|idio|t']['mail_host'] }}
 
-To run the dummy mail server
+To run the dummy mail server:
 
 ./example/dummymail.sh
 
 You will see the contents of any mail sent printed in the terminal where you
-start the script
+start the script.
 
-2. django-support page supports django static media support, to use it add 
-   a STATIC_URL to your settings file
+django-support page supports Django static media support, to use it add 
+a STATIC_URL to your settings.py file.
 
 {{ d['sections']['example/settings.py|idio|t']['static_url'] }}
 
-3. add django_support_page to your INSTALLED_APPS SETTING
+If you do not intend to use Django's static media support, copy the templates in django_support_page to your own templates directory, and the contents of the static directory to the location you serve your static media from. django-support-page's default templates assume that you have a base template, and that it follows certain conventions, see templates.txt for details.
+
+Add django_support_page to your INSTALLED_APPS setting.
 
 {{ d['sections']['example/settings.py|idio|t']['installed_apps'] }}
 
-include django_support_pages urls in your urls.py
+Include django_support_pages urls in your urls.py.
 
 {{ d['sections']['docsrc/urls.py|idio|t']['1'] }}
 
-4. finally start the django application
+Finally start the Django application.
 
 cd example
 python manage.py runserver
 
-Visit http://localhost:8000/support/
-
-to see the default form and send a test message
+Visit http://localhost:8000/support/ to see the default form and send a test message.
