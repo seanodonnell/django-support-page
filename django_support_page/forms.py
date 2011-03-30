@@ -23,7 +23,9 @@ class SupportForm(forms.Form):
                 fail_silently=False):
 
         client_info = self.collect_client_info(request)
-        js_info = simplejson.loads(self.cleaned_data["js_info"])
+        js_info = {}
+        if self.cleaned_data["js_info"]:
+            js_info = simplejson.loads(self.cleaned_data["js_info"])
         client_info.update(js_info)
         for handler in support_handlers:
             handler(from_name=self.cleaned_data["name"],
