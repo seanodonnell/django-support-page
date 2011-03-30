@@ -8,7 +8,7 @@ class SupportForm(forms.Form):
     name = forms.CharField(max_length=255)
     email = forms.EmailField(max_length=100)
     subject = forms.CharField(max_length=100)
-    body = forms.CharField(widget=forms.TextInput())
+    body = forms.CharField(widget=forms.Textarea())
     js_info = forms.CharField(widget=forms.HiddenInput())
 
     class Media:
