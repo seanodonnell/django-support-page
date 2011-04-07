@@ -1,4 +1,4 @@
-$(document).ready(function(){
+DOMReady.add(function(){
 
 detected = {}
 
@@ -40,13 +40,13 @@ function detect_window_height()
     }
     return "unknown";
 }
-
+var browserd = browserTest();
 detected["appversion"] =  detect_appversion();
-detected["browser"] = $.browser.name;
-detected["browserversion"] = $.browser.version;
-detected["browserlayoutengine"] = $.layout.name;
-detected["layoutengineversion"] = $.layout.version;
-detected["operatingsystem"] = $.os.name;
+detected["browser"] = browserd.browser.name;
+detected["browserversion"] = browserd.browser.version;
+detected["browserlayoutengine"] = browserd.layout.name;
+detected["layoutengineversion"] = browserd.layout.version;
+detected["operatingsystem"] = browserd.os.name;
 detected["windowheight"] = detect_window_height();
 detected["windowwidth"] = detect_window_width();
 detected["supportsajax"] = $.support.ajax;

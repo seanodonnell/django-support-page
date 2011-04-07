@@ -13,8 +13,8 @@ class SupportForm(forms.Form):
 
     class Media:
         js = (
-                'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js',
-                'django-support-page/js/jquery.browser.min.js',
+                'django-support-page/js/domready.js',
+                'django-support-page/js/browserdetect.js',
                 'django-support-page/js/json2.js',
                 'django-support-page/js/modernizr-1.6.min.js',
                 'django-support-page/js/detect.js',)
