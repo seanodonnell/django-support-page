@@ -12,7 +12,7 @@ A resusable django app to provide a support request page that automatically dete
 
 setup(
     name = "django-support-page",
-    version = "0.1",
+    version = "0.1.1",
     description = 'django support page',
     long_description = LONG_DESCRIPTION,
     author = "Sean O'Donnell",
