@@ -1,8 +1,9 @@
 from django import forms
-from support_handlers import init_support_handlers
+from .support_handlers import init_support_handlers
 from django.utils import simplejson
 
 support_handlers = init_support_handlers()
+
 
 class SupportForm(forms.Form):
     name = forms.CharField(max_length=255)
@@ -21,7 +22,7 @@ class SupportForm(forms.Form):
                 'django-support-page/js/detect.js',)
 
     def save(self, data=None, name=None, files=None, request=None,
-                fail_silently=False):
+             fail_silently=False):
 
         client_info = self.collect_client_info(request)
         js_info = {}
@@ -41,6 +42,5 @@ class SupportForm(forms.Form):
         client_info["REMOTE_HOST"] = request.META.get("REMOTE_HOST", None)
         client_info["REMOTE_USER"] = request.META.get("REMOTE_USER", None)
         client_info["USER"] = request.user.username
-        #if not anonymous...
+        # if not anonymous...
         return client_info
-
