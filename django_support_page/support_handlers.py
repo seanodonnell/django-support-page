@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core import exceptions
-from django.utils.importlib import import_module
+from importlib import import_module
 
 
 def init_support_handlers():
