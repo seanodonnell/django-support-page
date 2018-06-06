@@ -1,3 +1,4 @@
 #!/bin/sh
-python setup.py bdist_egg upload
-python setup.py sdist upload
+python setup.py bdist_egg
+python setup.py sdist
+twine upload dist/*
